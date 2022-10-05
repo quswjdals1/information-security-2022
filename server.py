@@ -18,9 +18,8 @@ class SocketWorker(Thread):
         print(str(self.addr) + ": " + str(msg))
         
         for (addr, sock) in CLIENT_LIST.items():
-        #   실행환경 편의상 밑의 코드를 주석처리 하였습니다.
-        #    if addr == self.addr:
-        #        continue
+            if addr == self.addr:
+                continue
 
             sock.send(msg)
 
